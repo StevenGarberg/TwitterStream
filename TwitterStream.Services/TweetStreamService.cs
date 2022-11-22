@@ -1,7 +1,9 @@
-﻿using Tweetinvi;
-using TwitterStream.API.Repositories;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Tweetinvi;
+using TwitterStream.Repositories;
 
-namespace TwitterStream.API.Services;
+namespace TwitterStream.Services;
 
 public class TweetStreamService : BackgroundService
 {

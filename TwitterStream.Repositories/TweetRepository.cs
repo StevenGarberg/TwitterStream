@@ -1,6 +1,6 @@
 ﻿using Tweetinvi.Models.V2;
 
-namespace TwitterStream.API.Repositories;
+namespace TwitterStream.Repositories;
 
 public interface ITweetRepository
 {

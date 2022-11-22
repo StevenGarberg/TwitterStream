@@ -12,7 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TwitterStream.Models\TwitterStream.Models.csproj" />
+      <ProjectReference Include="..\TwitterStream.Repositories\TwitterStream.Repositories.csproj" />
+      <ProjectReference Include="..\TwitterStream.Services\TwitterStream.Services.csproj" />
     </ItemGroup>
 
 </Project>

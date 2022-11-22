@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TwitterStream.API.Repositories;
+using TwitterStream.Repositories;
 
 namespace TwitterStream.API.Controllers;
 

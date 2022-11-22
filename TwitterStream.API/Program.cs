@@ -1,6 +1,6 @@
 using Tweetinvi;
-using TwitterStream.API.Repositories;
-using TwitterStream.API.Services;
+using TwitterStream.Repositories;
+using TwitterStream.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
