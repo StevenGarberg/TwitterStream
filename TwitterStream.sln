@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterStream.API", "TwitterStream.API\TwitterStream.API.csproj", "{2F5C5765-5444-4551-916F-7570F3D16A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterStream.Models", "TwitterStream.Models\TwitterStream.Models.csproj", "{47E56C22-40F2-4C9D-B004-6D15C776B18F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterStream.Web", "TwitterStream.Web\TwitterStream.Web.csproj", "{1E0DE788-38A8-41FF-95B5-14EEB4520E01}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{307D6DB2-C4D0-4B96-8162-75B941A1F013}"
@@ -28,10 +26,6 @@ Global
 		{2F5C5765-5444-4551-916F-7570F3D16A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5C5765-5444-4551-916F-7570F3D16A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5C5765-5444-4551-916F-7570F3D16A29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47E56C22-40F2-4C9D-B004-6D15C776B18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47E56C22-40F2-4C9D-B004-6D15C776B18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47E56C22-40F2-4C9D-B004-6D15C776B18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47E56C22-40F2-4C9D-B004-6D15C776B18F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E0DE788-38A8-41FF-95B5-14EEB4520E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E0DE788-38A8-41FF-95B5-14EEB4520E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E0DE788-38A8-41FF-95B5-14EEB4520E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
