@@ -21,15 +21,22 @@
 </ol>
 <hr/>
 <h2>Tweets</h2>
+<EditForm Model="@this">
+    <label>Number of Tweets:</label><InputNumber class="form-control" @bind-Value="@RefreshCount" /><br/>
+    <label>Refresh Rate (in milliseconds):</label><InputNumber class="form-control" @bind-Value="@RefreshInterval" />
+</EditForm>
+<br/>
 <div class="row">
     @foreach (var tweet in Tweets)
     {
-        <div class="card tweet col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card-header">
-                @($"@{tweet.AuthorId}")
-            </div>
-            <div class="card-body">
-                @tweet.Text
+        <div class="tweet col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+            <div class="card">
+                <div class="card-header">
+                    @($"@{tweet.AuthorId}")
+                </div>
+                <div class="card-body">
+                    @tweet.Text
+                </div>
             </div>
         </div>
     }
@@ -39,6 +46,9 @@
     private TweetV2[] Tweets = Array.Empty<TweetV2>();
     private string[] TopHashtags = Array.Empty<string>();
     private int TweetCount = 0;
+    
+    private int RefreshInterval = 1000;
+    private int RefreshCount = 24;
 
     protected override void OnInitialized()
     {
@@ -54,12 +64,12 @@
             TopHashtags = TweetRepository.GetTopHashtags();
             Tweets = TweetRepository.Tweets.Values
                 .OrderByDescending(x => x.CreatedAt)
-                .Take(96)
+                .Take(RefreshCount)
                 .ToArray();
             
             StateHasChanged();
             
-            await Task.Delay(1000);
+            await Task.Delay(RefreshInterval);
         }
     // ReSharper disable once FunctionNeverReturns
     }
