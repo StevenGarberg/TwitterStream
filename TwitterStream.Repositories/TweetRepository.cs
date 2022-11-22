@@ -6,7 +6,6 @@ public interface ITweetRepository
 {
     Dictionary<string, TweetV2> Tweets { get; set; }
     void Insert(TweetV2 tweet);
-    TweetV2[] Get();
     int Count();
     string[] GetTopHashtags(int count = 10);
 }
@@ -35,11 +34,6 @@ public class TweetRepository : ITweetRepository
                 HashtagCounts.Add(hashtag.Tag, 1);
             }
         }
-    }
-
-    public TweetV2[] Get()
-    {
-        return Tweets.Values.ToArray();
     }
 
     public int Count()
