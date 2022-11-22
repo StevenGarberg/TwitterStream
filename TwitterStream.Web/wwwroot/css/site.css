@@ -1,5 +1,25 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+body {
+    background: #F5F8FA;
+    color: #14171A;
+}
+
+.card {
+    padding: 10px;
+}
+
+.card, .card-body {
+    background: #E1E8ED;
+    color: #14171A;
+}
+
+.card-header {
+    background: #1DA1F2;
+    color: white;
+    font-weight: bold;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -32,6 +52,10 @@ a, .btn-link {
 
 .validation-message {
     color: red;
+}
+
+.tweet {
+    margin-bottom: 10px;
 }
 
 #blazor-error-ui {

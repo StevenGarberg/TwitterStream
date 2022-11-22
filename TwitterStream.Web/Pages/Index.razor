@@ -1,9 +1,70 @@
 ﻿@page "/"
+@using System.Timers
+@using AsyncAwaitBestPractices
+@using Tweetinvi.Models.V2
+@using TwitterStream.Repositories
+@inject ITweetRepository TweetRepository
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Twitter Stream</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Hello, Twitter!</h1>
+<h3>
+    <strong>Tweet Count:</strong> @TweetCount
+</h3>
+<h3>
+    <strong>Top Hashtags:</strong>
+</h3>
+<ul>
+    @for (var i = 0; i < TopHashtags.Length; i++)
+    {
+        var hashtag = TopHashtags[i];
+        <li>@i) @hashtag</li>
+    }
+</ul>
+<hr/>
+<h2>Tweets</h2>
+<div class="row">
+    @foreach (var tweet in Tweets)
+    {
+        <div class="card tweet col-md-4">
+            <div class="card-header">
+                @($"@{tweet.AuthorId}")
+            </div>
+            <div class="card-body">
+                @tweet.Text
+            </div>
+        </div>
+    }
+</div>
 
-Welcome to your new app.
+@code {
+    private TweetV2[] Tweets = Array.Empty<TweetV2>();
+    private string[] TopHashtags = Array.Empty<string>();
+    private int TweetCount = 0;
+    
+    private Timer Timer;
 
-<SurveyPrompt Title="How is Blazor working for you?"/>
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Update().SafeFireAndForget();
+    }
+    
+    private async Task Update()
+    {
+        while (true)
+        {
+            await Task.Delay(1000);
+            
+            TweetCount = TweetRepository.Count();
+            TopHashtags = TweetRepository.GetTopHashtags();
+            Tweets = TweetRepository.Tweets.Values
+                .OrderByDescending(x => x.CreatedAt)
+                .Take(99)
+                .ToArray();
+            
+            StateHasChanged();
+        }
+    }
+}

@@ -2,8 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TwitterStream.Repositories\TwitterStream.Repositories.csproj" />
+      <ProjectReference Include="..\TwitterStream.Services\TwitterStream.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.6" />
+    </ItemGroup>
 
 </Project>

@@ -4,6 +4,7 @@ namespace TwitterStream.Repositories;
 
 public interface ITweetRepository
 {
+    Dictionary<string, TweetV2> Tweets { get; set; }
     void Insert(TweetV2 tweet);
     TweetV2[] Get();
     int Count();
@@ -12,7 +13,7 @@ public interface ITweetRepository
 
 public class TweetRepository : ITweetRepository
 {
-    private readonly Dictionary<string, TweetV2> Tweets = new();
+    public Dictionary<string, TweetV2> Tweets { get; set; } = new();
     private readonly Dictionary<string, int> HashtagCounts = new();
 
     public void Insert(TweetV2 tweet)
